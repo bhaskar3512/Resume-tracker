@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="3">
+    <title>Resume Click Tracker</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e293b;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #334155;
+            text-align: center;
+        }
+        th {
+            background: #334155;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📊 Resume Click Dashboard</h1>
+
+<div class="cards">
+    <div class="card">
+        <h2>GitHub</h2>
+        <p>{{ github_count }}</p>
+    </div>
+    <div class="card">
+        <h2>LinkedIn</h2>
+        <p>{{ linkedin_count }}</p>
+    </div>
+</div>
+
+<table>
+    <tr>
+        <th>Platform</th>
+        <th>IP Address</th>
+        <th>Time</th>
+    </tr>
+    {% for row in data %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
